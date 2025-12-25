@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './App.css'
-import { Linter } from 'eslint'
 
 function App() {
   const [inputValue, setInputValue] = useState('')
