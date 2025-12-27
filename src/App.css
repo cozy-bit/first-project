@@ -93,3 +93,12 @@ button:hover {
   font-size: 1em;
   color: #333;
 }
+
+button.delButton {
+  padding: 8px 12px;
+  font-size: 1em;
+}
+
+button.delButton:hover {
+  background: rgb(168, 24, 24);
+}

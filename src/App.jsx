@@ -14,10 +14,13 @@ function App() {
       completed: false,
     }
 
+
     setTodos([...todos, newTodo])
     setInputValue('')
   }
-
+  const deleteTodo = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id))
+  }
   return (
     <div className="app">
       <h1>Мои задачи</h1>
@@ -30,11 +33,16 @@ function App() {
           onChange={(e) => setInputValue(e.target.value)}
         />
 
-        <button type="submit">Добавить</button>
+        <button type="submit" className='addButton'>Добавить</button>
       </form>
 
-      <ul className="todo-lsit">
-        {todos.map(todo => (<li key={todo.id}><span>{todo.text}</span></li>))}
+      <ul className="todo-list">
+        {todos.map(todo => (
+          <li key={todo.id}>
+            <span>{todo.text}</span>
+            <button className='delButton' onClick={() => deleteTodo(todo.id)}>Удалить</button>
+          </li>
+        ))}
       </ul>
     </div>
   )
